@@ -24,4 +24,4 @@ jobs:
       - name: Run script
         env:
           SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
-        run: python api_tipocambio_sbs.py
+        run: python tc_sbs.py
