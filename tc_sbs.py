@@ -23,6 +23,9 @@ EMAIL_PASS = os.getenv("EMAIL_PASS")
 EMAIL_TO = os.getenv("EMAIL_TO")
 
 if not all([EMAIL_USER, EMAIL_PASS, EMAIL_TO]):
+    print("DEBUG EMAIL_USER:", repr(EMAIL_USER))
+    print("DEBUG EMAIL_PASS:", bool(EMAIL_PASS))
+    print("DEBUG EMAIL_TO:", repr(EMAIL_TO))
     raise ValueError("Faltan variables de entorno de email")
 
 # ===============================
