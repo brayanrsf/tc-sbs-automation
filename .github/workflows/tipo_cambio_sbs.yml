@@ -1,14 +1,5 @@
 name: Tipo de Cambio SBS
 
-- name: Run script
-  env:
-    SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
-    EMAIL_USER: ${{ secrets.EMAIL_USER }}
-    EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-    EMAIL_TO: ${{ secrets.EMAIL_TO }}
-  run: python api_tipocambio_sbs.py
-
-
 on:
   schedule:
     - cron: '0 13 * * *'   # todos los días 8:00 AM Perú (UTC-5)
@@ -34,3 +25,11 @@ jobs:
         env:
           SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
         run: python tc_sbs.py
+        
+      - name: Run script
+        env:
+          SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python api_tipocambio_sbs.py
