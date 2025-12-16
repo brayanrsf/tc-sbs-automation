@@ -2,7 +2,7 @@ name: Tipo de cambio SBS diario
 
 on:
   schedule:
-    - cron: "0 13 * * *"   # 8:00 AM Perú
+    - cron: "0 11 * * *"   # 8:00 AM Perú
   workflow_dispatch:
 
 jobs:
