@@ -1,0 +1,27 @@
+name: Tipo de Cambio SBS
+
+on:
+  schedule:
+    - cron: '0 13 * * *'   # todos los días 8:00 AM Perú (UTC-5)
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script
+        env:
+          SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
+        run: python api_tipocambio_sbs.py
