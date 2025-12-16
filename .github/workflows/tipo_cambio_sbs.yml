@@ -26,7 +26,7 @@ jobs:
           SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
         run: python tc_sbs.py
         
-      - name: Run script
+      - name: Run SBS script
         env:
           SBS_TOKEN: ${{ secrets.SBS_TOKEN }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
